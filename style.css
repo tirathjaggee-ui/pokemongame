@@ -1,0 +1,180 @@
+/* page style */
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: white;
+}
+
+/* dark theme */
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+/* title */
+h1 {
+    margin-top: 20px;
+}
+
+/* button areas */
+#difficultyButtons,
+#controls,
+#themeButtons {
+    margin: 10px;
+}
+
+/* button style */
+button {
+    padding: 10px;
+    margin: 2px;
+    font-size: 16px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/* button hover */
+button:hover {
+    background-color: #084298;
+}
+
+/* selected difficulty */
+.selected {
+    background-color: #084298;
+    border: 2px solid black;
+}
+
+/* status section */
+#status {
+    margin-top: 20px;
+}
+
+/* status text */
+#status h2 {
+    margin: 8px;
+    font-size: 34px;
+}
+
+/* message */
+#message {
+    font-size: 28px;
+    min-height: 30px;
+}
+
+/* game board */
+#game_grid {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* easy board */
+#game_grid.easyGrid {
+    width: 600px;
+}
+
+/* medium board */
+#game_grid.mediumGrid {
+    width: 800px;
+}
+
+/* hard board */
+#game_grid.hardGrid {
+    width: 1000px;
+}
+
+/* card container */
+.card {
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+
+    /* required flip animation */
+    transition: transform 1s;
+
+    /* required 3d perspective */
+    perspective: 1000px;
+
+    /* keeps card in 3d space */
+    transform-style: preserve-3d;
+}
+
+/* easy card size */
+.easyGrid .card {
+    width: 33.3%;
+}
+
+/* medium card size */
+.mediumGrid .card {
+    width: 25%;
+}
+
+/* hard card size */
+.hardGrid .card {
+    width: 16.6%;
+}
+
+/* card images */
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* front and back images */
+.front_face,
+.back_face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    /* hides the back side during flip */
+    backface-visibility: hidden;
+}
+
+/* pokemon image starts hidden behind the card */
+.front_face {
+    transform: rotateY(180deg);
+}
+
+/* flips card when class is added by JavaScript */
+.flip {
+    transform: rotateY(180deg);
+}
+
+/* matched cards */
+.matched {
+    cursor: default;
+}
+
+/* hides pokeball after cards match */
+.matched .back_face {
+    display: none;
+}
+
+/* keeps pokemon showing after cards match */
+.matched .front_face {
+    transform: rotateY(180deg);
+}
+
+/* dark board */
+body.dark #game_grid {
+    background-color: black;
+}
+
+/* mobile size */
+@media screen and (max-width: 700px) {
+
+    #game_grid {
+        width: 95%;
+    }
+    .card {
+        height: 130px;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Memory Game</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <h1>Pokemon Memory Game</h1>
+
+    <!-- difficulty buttons -->
+    <div id="difficultyButtons">
+        <button id="easyBtn">Easy</button>
+        <button id="mediumBtn">Medium</button>
+        <button id="hardBtn">Hard</button>
+    </div>
+
+    <!-- game buttons -->
+    <div id="controls">
+        <button id="resetBtn">Reset</button>
+        <button id="startBtn">Start!</button>
+        <button id="powerBtn">Power Up!</button>
+    </div>
+
+    <!-- game information -->
+    <div id="status">
+        <h2>Total Number of Pairs <span id="totalPairs">0</span></h2>
+        <h2>Number of Matches <span id="pairsMatched">0</span></h2>
+        <h2>Number of pair left <span id="pairsLeft">0</span></h2>
+        <h2>Number of Clicks <span id="clicks">0</span></h2>
+        <h2>You got <span id="totalTime">0</span> seconds. <span id="timer">0</span> seconds passed!</h2>
+    </div>
+
+    <h2 id="message">Choose a difficulty and press Start.</h2>
+
+    <!-- cards go here -->
+    <div id="game_grid"></div>
+
+    <!-- theme buttons -->
+    <div id="themeButtons">
+        <button id="darkBtn">Dark</button>
+        <button id="lightBtn">Light</button>
+    </div>
+
+</body>
+
+</html>
